@@ -37,7 +37,7 @@
             // 
             this.lb_sophong.AutoSize = true;
             this.lb_sophong.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_sophong.Location = new System.Drawing.Point(67, 177);
+            this.lb_sophong.Location = new System.Drawing.Point(181, 3);
             this.lb_sophong.Name = "lb_sophong";
             this.lb_sophong.Size = new System.Drawing.Size(75, 32);
             this.lb_sophong.TabIndex = 5;

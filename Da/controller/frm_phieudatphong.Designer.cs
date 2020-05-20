@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_phieudatphong));
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTimkiem = new DevExpress.XtraEditors.SimpleButton();
             this.btnxoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.dtp_ngaytra = new System.Windows.Forms.DateTimePicker();
@@ -60,7 +61,6 @@
             this.cbb_tang = new System.Windows.Forms.ComboBox();
             this.panelphong = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnTimkiem = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeChartRangeControlClient1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewchitiet)).BeginInit();
@@ -104,6 +104,21 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu đặt";
+            // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimkiem.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnTimkiem.Appearance.Options.UseFont = true;
+            this.btnTimkiem.Appearance.Options.UseForeColor = true;
+            this.btnTimkiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTimkiem.ImageOptions.Image")));
+            this.btnTimkiem.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btnTimkiem.Location = new System.Drawing.Point(1083, 113);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Size = new System.Drawing.Size(162, 62);
+            this.btnTimkiem.TabIndex = 33;
+            this.btnTimkiem.Text = "Tìm kiếm";
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
             // 
             // btnxoa
             // 
@@ -396,21 +411,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            // 
-            // btnTimkiem
-            // 
-            this.btnTimkiem.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimkiem.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnTimkiem.Appearance.Options.UseFont = true;
-            this.btnTimkiem.Appearance.Options.UseForeColor = true;
-            this.btnTimkiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnTimkiem.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnTimkiem.Location = new System.Drawing.Point(1083, 113);
-            this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(162, 62);
-            this.btnTimkiem.TabIndex = 33;
-            this.btnTimkiem.Text = "Tìm kiếm";
-            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frm_phieudatphong
             // 
