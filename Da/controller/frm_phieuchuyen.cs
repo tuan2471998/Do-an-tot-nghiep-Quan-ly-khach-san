@@ -36,17 +36,13 @@ namespace Da.controller
         }
         public void load_dgvPD()
         {
-            string ngay = dateEditngaychuyen.Text;
-
             ds = new DataSet();
-            da = new SqlDataAdapter(" select * from PHIEUDAT where NGAYTRA_DUKIEN>='"+ngay+"'", conn.cnn);
+            da = new SqlDataAdapter("select * from PHIEUDAT where MADP = '" + comboBox_madatphong.SelectedValue.ToString() + "'", conn.cnn);
             da.Fill(ds, "PHIEUDAT");
             dataGridView_thongtinchitietchuyen.DataSource = ds.Tables["PHIEUDAT"];
             key[0] = ds.Tables["PHIEUDAT"].Columns[0];
             ds.Tables["PHIEUDAT"].PrimaryKey = key;
         }
-
-
 
         private string sinhtudongMaphieuthue()
         {
@@ -84,53 +80,28 @@ namespace Da.controller
         {
             loadcbxMaKH();
             textBox_MANV.Text = Properties.Settings.Default.MaNV;
-            dateEditngaychuyen.Text = DateTime.Now.ToString();
+            dtp_ngaychuyen.Value = DateTime.Now;
             textBoxmkh.Clear();
             textBox_MANV.Enabled = false;
             textBox_MATP.Clear();
             comboBox_madatphong.SelectedText = "";
-            dateEditngaytra.SelectedText = "";
-            dateEditngaychuyen.Enabled = false;
+            dtp_ngaytra.Value = DateTime.Now;
             textBox_tiencoc.Clear();
             textBoxsl.Clear();
-           
-        }
-
-        private void comboBox_madatphong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-
-        }
-        private bool kiemtratrongdatagridview(string v)
-        {
-            foreach (DataGridViewRow dr in dataGridView_thongtinchitietchuyen.Rows)
-            {
-                if (dr.Cells[1].Value != null)
-                {
-                    if (dr.Cells[1].Value.ToString() == v)
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
         }
 
         private void dataGridView_thongtinchitietchuyen_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-
-
-                dateEditngaytra.Text = dataGridView_thongtinchitietchuyen.CurrentRow.Cells[4].Value.ToString();
+                dtp_ngaytra.Text = dataGridView_thongtinchitietchuyen.CurrentRow.Cells[4].Value.ToString();
                 textBoxsl.Text = dataGridView_thongtinchitietchuyen.CurrentRow.Cells[5].Value.ToString();
                 textBoxmkh.Text = dataGridView_thongtinchitietchuyen.CurrentRow.Cells[2].Value.ToString();
                 textBox_tiencoc.Text = dataGridView_thongtinchitietchuyen.CurrentRow.Cells[6].Value.ToString();
                 comboBox_madatphong.SelectedValue = dataGridView_thongtinchitietchuyen.CurrentRow.Cells[0].Value.ToString();
                 textBox_MATP.Text = sinhtudongMaphieuthue();
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }
@@ -138,96 +109,94 @@ namespace Da.controller
 
         public void themPhieuThue()
         {
-            //try { 
-            if (KT_MaTP(comboBox_madatphong.SelectedValue.ToString()) == true)
+            try
             {
-
-
                 int sl = int.Parse(textBoxsl.Text);
-                string sel = "INSERT INTO PHIEUTHUE VALUES('" + textBox_MATP.Text + "','" + textBox_MANV.Text + "','" + textBoxmkh.Text + "','" + comboBox_madatphong.SelectedValue.ToString() + "','" + dateEditngaychuyen.Text + "','" + dateEditngaytra.Text + "'," + sl + ",'" + textBox_tiencoc.Text + "')";
+                string sel = "INSERT INTO PHIEUTHUE VALUES('" + textBox_MATP.Text + "','" + textBox_MANV.Text + "','" + textBoxmkh.Text + "','" + comboBox_madatphong.SelectedValue.ToString() + "','" + dtp_ngaychuyen.Value + "','" + dtp_ngaytra.Value + "'," + sl + ",'" + textBox_tiencoc.Text + "')";
                 SqlCommand cmd = new SqlCommand(sel, conn.cnn);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm phiếu thuê thành công !");
                 textBox_MATP.Clear();
             }
+            catch
+            {
+                MessageBox.Show("Vui lòng thực hiện lại thao tác chuyển phòng!");
+            }
+        }
+
+        private int xoaCTPhieuDat()
+        {
+            string sql = "delete from CT_PHIEUDAT where MADP = '" + comboBox_madatphong.SelectedValue.ToString() + "'";
+            SqlCommand cmd = new SqlCommand(sql, conn.cnn);
+            int kq = (int)cmd.ExecuteNonQuery();
+            if (kq != 0)
+                return 1;
             else
-                MessageBox.Show("Mã Phòng Đã Được Thuê  Vui Lòng Chọn Mã Phòng Khác !");
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Vui lòng thực hiện lại thao tác chuyển phòng!");
-            //}
-        } 
-           
+                return 0;
+        }
 
-
-        //public void xoaDP()
-        //{
-
-
-        //    DataRow dr_xoa = ds.Tables["PHIEUDAT"].Rows.Find(comboBox_madatphong.SelectedValue.ToString());
-
-        //    if (dr_xoa != null)
-        //    {
-        //        dr_xoa.Delete();
-        //        SqlCommandBuilder db = new SqlCommandBuilder(da);
-        //        da.Update(ds, "PHIEUDAT");
-
-        //        ds.Tables["PHIEUDAT"].Clear();
-        //        load_dgvPD();
-
-
-
-
-        //    }
-        //    else
-
-        //        MessageBox.Show("Vui lòng chọn mã phiếu nhập ");
-        //}
-
-        bool KT_MaTP(string ma)
+        private void xoaPhieuDat()
         {
             try
             {
-                //mo ket noi
-                
-                // xay dung chuoi truy van
-                string selectstring = "select count(*) from PHIEUTHUE where MADP = '" + ma + "'";
-                // khai bao command voi chuoi truy van va bien kn
-                SqlCommand cmd = new SqlCommand(selectstring, conn.cnn);
-                // goi ham thuc thi truy van
-                int count = (int)cmd.ExecuteScalar();
-                //dong kn
-               
-                //xu ly ket qua truy van
+                int xoactpd = xoaCTPhieuDat();
+                if (xoactpd == 1)
+                {
 
-                if (count >= 1) // da co ma lop
-                    return false;
-                return true;
-
+                    string sql = "delete from PHIEUDAT where MADP = '" + comboBox_madatphong.SelectedValue.ToString() + "'";
+                    SqlCommand cmd = new SqlCommand(sql, conn.cnn);
+                    int kq = (int)cmd.ExecuteNonQuery();
+                    if (kq != 0)
+                        MessageBox.Show("Lập phiếu thành công");
+                }
+                else
+                    MessageBox.Show("Lập phiếu thất bại");
             }
-            catch (Exception)
+            catch
             {
-                return false;
+                MessageBox.Show("Đã xảy ra lỗi");
             }
         }
 
-
-        private void button_lapphieu_Click(object sender, EventArgs e)
+        private void chuyenTrangThaiPhong()
         {
-            themPhieuThue();
-            
+            DataSet ds_ctphieudat = new DataSet();
+            SqlDataAdapter da_ctphieudat = new SqlDataAdapter("select * from CT_PHIEUDAT where MADP = '" + comboBox_madatphong.SelectedValue.ToString() + "'", conn.cnn);
+            da_ctphieudat.Fill(ds_ctphieudat, "CT_PHIEUDAT");
+
+            DataSet ds_phong = new DataSet();
+            SqlDataAdapter da_phong = new SqlDataAdapter("select * from PHONG", conn.cnn);
+            da_phong.Fill(ds_phong, "PHONG");
+            key[0] = ds_phong.Tables["PHONG"].Columns[0];
+            ds_phong.Tables["PHONG"].PrimaryKey = key;
+
+            foreach (DataRow row in ds_ctphieudat.Tables["CT_PHIEUDAT"].Rows)
+            {
+                DataRow update = ds_phong.Tables["PHONG"].Rows.Find(row["MAPH"].ToString());
+                if (update != null)
+                {
+                    update["TINHTRANG"] = 1;
+                    SqlCommandBuilder cmb = new SqlCommandBuilder(da_phong);
+                    da_phong.Update(ds_phong, "PHONG");
+                }
+            }
         }
 
-       
         private void comboBox_madatphong_SelectedValueChanged(object sender, EventArgs e)
         {
             textBox_MATP.Text = sinhtudongMaphieuthue();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnTimkiem_Click(object sender, EventArgs e)
         {
             load_dgvPD();
+        }
+
+        private void btnLapphieu_Click(object sender, EventArgs e)
+        {
+            chuyenTrangThaiPhong();
+            themPhieuThue();
+            xoaPhieuDat();
+            loadcbxMaKH();
         }
     }
 }

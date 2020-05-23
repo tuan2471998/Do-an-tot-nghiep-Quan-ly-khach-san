@@ -35,7 +35,7 @@ namespace Da.controller
         private void btn_chon_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "PNG picture(*.png)|*.png|JPG picture(*.jpg)|*.jpg|All files(*.*)|*.*";
+            ofd.Filter = "JPG picture(*.jpg)|*.jpg";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image = new Bitmap(ofd.FileName);
@@ -65,6 +65,12 @@ namespace Da.controller
                 txt_hoten.Focus();
                 return 0;
             }
+            else if (!txt_email.Text.Contains('@') || !txt_email.Text.Contains('.'))
+            {
+                MessageBox.Show("Email không hợp lệ");
+                txt_email.Focus();
+                return 0;
+            }
             else if (string.IsNullOrEmpty(txt_cmnd.Text))
             {
                 MessageBox.Show("Chưa nhập số căn cước/chứng minh nhân viên");
@@ -77,6 +83,18 @@ namespace Da.controller
                 txt_diachi.Focus();
                 return 0;
             }
+            else if (txt_sdt.Text.Length < 10 || txt_sdt.Text.Length > 10)
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ");
+                txt_sdt.Focus();
+                return 0;
+            }
+            else if (txt_cmnd.Text.Length < 10 || txt_cmnd.Text.Length > 12)
+            {
+                MessageBox.Show("Số CMND không hợp lệ");
+                txt_sdt.Focus();
+                return 0;
+            }
             else if (cbb_bangcap.SelectedIndex == 0)
             {
                 MessageBox.Show("Chưa chọn bằng cấp nhân viên");
@@ -86,6 +104,11 @@ namespace Da.controller
             {
                 MessageBox.Show("Chưa nhập số điện thoại nhân viên");
                 txt_sdt.Focus();
+                return 0;
+            }
+            else if (pictureBox1.Image == null)
+            {
+                MessageBox.Show("Chưa chọn hình ảnh nhân viên");
                 return 0;
             }
             else
@@ -161,22 +184,22 @@ namespace Da.controller
             //tự động cấp tài khoản cho nhân viên vừa thêm
             if (kq == 1)
             {
-                //da = new SqlDataAdapter(" select * from TAIKHOAN", conn.cnn);
-                //ds = new DataSet();
-                //da.Fill(ds, "TAIKHOAN");
-                //key[0] = ds.Tables["TAIKHOAN"].Columns[0];
-                //ds.Tables["TAIKHOAN"].PrimaryKey = key;
+                da = new SqlDataAdapter(" select * from TAIKHOAN", conn.cnn);
+                ds = new DataSet();
+                da.Fill(ds, "TAIKHOAN");
+                key[0] = ds.Tables["TAIKHOAN"].Columns[0];
+                ds.Tables["TAIKHOAN"].PrimaryKey = key;
 
-                //DataRow insert_New_tk = ds.Tables["TAIKHOAN"].NewRow();
-                //insert_New_tk["TENTK"] = manv;
-                //insert_New_tk["MANV"] = manv;
-                //insert_New_tk["MK"] = "123";
-                //insert_New_tk["QUYEN"] = "NVIEN";
+                DataRow insert_New_tk = ds.Tables["TAIKHOAN"].NewRow();
+                insert_New_tk["TENTK"] = manv;
+                insert_New_tk["MANV"] = manv;
+                insert_New_tk["MK"] = "123";
+                insert_New_tk["QUYEN"] = "NVIEN";
 
-                //ds.Tables["TAIKHOAN"].Rows.Add(insert_New_tk);
-                //SqlCommandBuilder cmb = new SqlCommandBuilder(da);
-                //da.Update(ds, "TAIKHOAN");
-                //ds.Tables["TAIKHOAN"].Clear();
+                ds.Tables["TAIKHOAN"].Rows.Add(insert_New_tk);
+                SqlCommandBuilder cmb = new SqlCommandBuilder(da);
+                da.Update(ds, "TAIKHOAN");
+                ds.Tables["TAIKHOAN"].Clear();
 
                 MessageBox.Show("Thêm Thành công");
             }
@@ -208,9 +231,12 @@ namespace Da.controller
                 txt_diachi.Clear();
                 txt_hoten.Clear();
                 txt_sdt.Clear();
-                rdb_nam.Checked = true;
                 txt_hoten.Focus();
                 txt_email.Clear();
+                cbb_bangcap.SelectedIndex = 0;
+                dateTimePicker_ngaysinh.Value = new DateTime(1990, 01, 01);
+                dateTimePicker_ngayvaolam.Value = DateTime.Today;
+                pictureBox1.Image = null;
             }           
         }
 

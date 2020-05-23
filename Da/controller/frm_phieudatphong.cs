@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
 using System.Data.SqlClient;
+using DevExpress.Charts.Native;
 
 namespace Da.controller
 {
@@ -21,6 +22,7 @@ namespace Da.controller
         DataSet ds_ph;
         SqlDataAdapter da_ph;
         connect conn = new connect();
+        DataColumn[] key = new DataColumn[1];
         public frm_phieudatphong()
         {
             InitializeComponent();
@@ -37,6 +39,7 @@ namespace Da.controller
             foreach (DataRow row in ds.Tables["KHACHHANG"].Rows)
             {
                 txtMaKH.AutoCompleteCustomSource.Add(row["MAKH"].ToString());
+                txtMaKH.AutoCompleteCustomSource.Add(row["SDT"].ToString());
             }
             txtMaKH.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtMaKH.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -67,7 +70,7 @@ namespace Da.controller
             else if (chb_loai.Checked && !chb_tang.Checked)
             {
                 ds_ph = new DataSet();
-                da_ph = new SqlDataAdapter("select MAPH from PHONG where TINHTRANG = 0 and MALOAI = '" + cbb_loai.SelectedValue.ToString() +"'", conn.cnn);
+                da_ph = new SqlDataAdapter("select MAPH from PHONG where TINHTRANG = 0 and MALOAI = '" + cbb_loai.SelectedValue.ToString() + "'", conn.cnn);
                 da_ph.Fill(ds_ph, "PHONG");
 
                 //load danh sach
@@ -165,7 +168,6 @@ namespace Da.controller
                 if (kiemtratrongdatagridview(Properties.Settings.Default.value.ToString().Trim().ToString()))
                 {
                     SqlDataAdapter da_phCT = new SqlDataAdapter("select * from CT_PHIEUDAT where MADP ='999999'", conn.cnn);
-                    // Ánh xạ dữ liệu từ DB vào dataset
                     da_phCT.Fill(ds_phchitiet, "CHITIET");
                     dt1chitiet = ds_phchitiet.Tables["CHITIET"];
 
@@ -184,6 +186,7 @@ namespace Da.controller
                     MessageBox.Show("Phòng này đã chọn! Vui lòng chọn phòng khác!");
                 }
             }
+
         }
 
         private bool kiemtratrongdatagridview(string v)
@@ -237,36 +240,11 @@ namespace Da.controller
             textBoxmanhanvien.Text = "";
             textBoxmaphieudat.Text = "";
             dtp_ngaydat.Value = dtp_ngaytra.Value = DateTime.Now.Date;
+            panelphong.Controls.Clear();
             textBoxsoluong.Text = "";
             textBoxtiencoc.Text = "";
-            try
-            {
-                try
-                {
-                    for (int i = dataGridViewchitiet.Rows.Count - 2; i >= 0; i--)
-                    {
-                        dataGridViewchitiet.Rows.RemoveAt(i);
-                    }
-
-                }
-                catch
-                {
-                    try
-                    {
-                        dataGridViewchitiet.Rows.Clear();
-                    }
-                    catch
-                    {
-                        dataGridViewchitiet.Controls.Clear();
-                    }
-                }
-            }
-            catch
-            {
-                dataGridViewchitiet.DataSource = null;
-            }
-
-
+            dt1chitiet.Clear();
+            dataGridViewchitiet.DataSource = null;
         }
 
         private void themChiTietPhieuDat()
@@ -274,21 +252,10 @@ namespace Da.controller
             // Tạo Adapter
             SqlDataAdapter da = new SqlDataAdapter("select * from CT_PHIEUDAT", conn.cnn);
 
-
             // Tạo và lấp đầy DataSet
             DataSet ds = new DataSet();
             da.Fill(ds, "CTPhieuThem");
-            // Lấy thông tin Table vào DataTable
-            //DataTable dt = ds.Tables["CTPhieuThem"];
 
-            // Tạo thêm row mới
-            //DataRow newRow = dt.NewRow();
-            //newRow[0] = textBoxmaphieudat.Text;
-            //newRow[1] = textBoxmanhanvien.Text;
-            //newRow[2] = dateEditngaydat.DateTime;
-            //newRow[3] = dateEditngaytra.DateTime;
-            //newRow[4] = int.Parse(textBoxsoluong.Text);
-            //dt.Rows.Add(newRow);
             foreach (DataGridViewRow dr in dataGridViewchitiet.Rows)
             {
                 if (dr.Cells[0].Value != null && dr.Cells[1].Value != null)
@@ -413,31 +380,48 @@ namespace Da.controller
             }
         }
 
+        private void chuyenTrangThaiPhong()
+        {
+            DataSet ds_phong = new DataSet();
+            SqlDataAdapter da_phong = new SqlDataAdapter("select * from PHONG", conn.cnn);
+            da_phong.Fill(ds_phong, "PHONG");
+            key[0] = ds_phong.Tables["PHONG"].Columns[0];
+            ds_phong.Tables["PHONG"].PrimaryKey = key;
+
+            foreach (DataGridViewRow row in dataGridViewchitiet.Rows)
+            {
+                DataRow update = ds_phong.Tables["PHONG"].Rows.Find(row.Cells[1].Value.ToString());
+                if (update != null)
+                {
+                    update["TINHTRANG"] = 2;
+                    SqlCommandBuilder cmb = new SqlCommandBuilder(da_phong);
+                    da_phong.Update(ds_phong, "PHONG");
+                }
+            }
+        }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //them dk cho if
-            ////
             if (textBoxmanhanvien.Text.Length > 0 && string.IsNullOrEmpty(txtMaKH.Text) == false && textBoxtiencoc.Text.Length > 0 && textBoxmaphieudat.Text.Length > 0 && textBoxsoluong.Text.Length > 0)
-            {
-                try
                 {
-                    themPhieuDAt();
-                    themChiTietPhieuDat();
-
-                    MessageBox.Show("Bạn đã thêm thành công !!!!!!");
-                    reload();
+                    try
+                    {
+                        chuyenTrangThaiPhong();
+                        themPhieuDAt();
+                        themChiTietPhieuDat();                       
+                        MessageBox.Show("Bạn đã thêm thành công !!!!!!");
+                        reload();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn đã thêm thất bại !!!!!!");
+                    }
 
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Bạn đã thêm thất bại !!!!!!");
+                    MessageBox.Show("Bạn vui lòng nhập đầy đủ dữ liệu !!!!!");
                 }
-
-            }
-            else
-            {
-                MessageBox.Show("Bạn vui lòng nhập đầy đủ dữ liệu !!!!!");
-            }
         }
 
         private void chb_tang_CheckedChanged(object sender, EventArgs e)
@@ -485,6 +469,37 @@ namespace Da.controller
             if (kt == 1)
             {
                 Loadctroldong();
+            }
+        }
+
+        DataSet ds_makh;
+        SqlDataAdapter da_makh;
+
+        private void TimMAKH()
+        {
+            ds_makh = new DataSet();
+            da_makh = new SqlDataAdapter("select MAKH from KHACHHANG where SDT = '" + txtMaKH.Text + "'", conn.cnn);
+            da_makh.Fill(ds_makh, "MAKH");
+
+            if (ds_makh.Tables["MAKH"].Rows.Count != 0)
+            {
+                foreach (DataRow row in ds_makh.Tables["MAKH"].Rows)
+                {
+                    txtMaKH.Text = row["MAKH"].ToString();
+                }
+            }
+        }
+
+        private void txtMaKH_Leave(object sender, EventArgs e)
+        {
+            TimMAKH();
+        }
+
+        private void txtMaKH_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TimMAKH();
             }
         }
     }
