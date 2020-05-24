@@ -211,6 +211,11 @@ namespace Da.controller
                 rdb_nam.Checked = true;
                 txt_hoten.Focus();
                 txt_email.Clear();
+                cbb_bangcap.SelectedIndex = 0;
+                dateTimePicker_ngaysinh.Text = "";
+                dateTimePicker_ngayvaolam.Text = "";
+                rdb_nam.Checked = rdb_nu.Checked = false;
+                
             }           
         }
 

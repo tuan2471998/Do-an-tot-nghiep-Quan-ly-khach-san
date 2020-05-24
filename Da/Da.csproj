@@ -196,6 +196,12 @@
     <Compile Include="controller\frm_thongtinnhanvien.Designer.cs">
       <DependentUpon>frm_thongtinnhanvien.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\qlthietbi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\qlthietbi.Designer.cs">
+      <DependentUpon>qlthietbi.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\them_dichvu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controller\frm_thongtinnhanvien.resx">
       <DependentUpon>frm_thongtinnhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\qlthietbi.resx">
+      <DependentUpon>qlthietbi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controller\them_dichvu.resx">
       <DependentUpon>them_dichvu.cs</DependentUpon>

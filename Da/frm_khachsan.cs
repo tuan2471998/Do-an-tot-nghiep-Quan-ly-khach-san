@@ -202,6 +202,12 @@ namespace Da
             AddTabControl(frm, "Danh sách phòng");
         }
 
-        
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            hienthi.TabPages.Clear();
+            qlthietbi frm = new qlthietbi();
+
+            AddTabControl(frm, "Quản lý thiết bị");
+        }
     }
 }

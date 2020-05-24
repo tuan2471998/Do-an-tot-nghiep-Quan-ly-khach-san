@@ -90,6 +90,7 @@ namespace Da
             this.panel2 = new System.Windows.Forms.Panel();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemphieudatphong = new DevExpress.XtraNavBar.NavBarItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel4.SuspendLayout();
             this.dockPanel3.SuspendLayout();
@@ -321,9 +322,10 @@ namespace Da
             this.barButtonItem_lienhe,
             this.barButtonItem_huongdan,
             this.barSubItem1,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barButtonItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 21;
+            this.ribbonControl1.MaxItemId = 24;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -511,6 +513,7 @@ namespace Da
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem_qlkhachhang);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem_qlphong);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem_qldichvu);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Khách Sạn";
             // 
@@ -626,6 +629,14 @@ namespace Da
             this.navBarItemphieudatphong.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItemphieudatphong.ImageOptions.SmallImage")));
             this.navBarItemphieudatphong.Name = "navBarItemphieudatphong";
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Quản lý thiết bị";
+            this.barButtonItem2.Id = 23;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // frm_khachsan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -713,6 +724,7 @@ namespace Da
         private DevExpress.XtraNavBar.NavBarItem navBarthuephong;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraNavBar.NavBarItem navBar_danhsachphong;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
     
 }
