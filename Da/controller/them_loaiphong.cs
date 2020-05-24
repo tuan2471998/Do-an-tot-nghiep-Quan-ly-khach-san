@@ -22,7 +22,6 @@ namespace Da.controller
 
         connect conn = new connect();
 
-        DataSet ds;
         SqlDataAdapter da;
         DataColumn[] key = new DataColumn[1];
 

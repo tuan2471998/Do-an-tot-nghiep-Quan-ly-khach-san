@@ -41,6 +41,16 @@ namespace Da.controller
 
         int kiemtra_thongtin()
         {
+            loadData_themkh();
+            foreach (DataRow row in ds.Tables["KHACHHANG"].Rows)
+            {
+                if (string.Compare(txt_sdt.Text, row["SDT"].ToString()) == 0)
+                {
+                    MessageBox.Show("Số điện thoại đã tồn tại");
+                    txt_tenkh.Focus();
+                    return 0;
+                }
+            }
             if (string.IsNullOrEmpty(txt_tenkh.Text))
             {
                 MessageBox.Show("Chưa nhập tên khách hàng");

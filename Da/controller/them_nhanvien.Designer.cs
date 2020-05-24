@@ -176,8 +176,9 @@
             // 
             // dateTimePicker_ngayvaolam
             // 
+            this.dateTimePicker_ngayvaolam.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker_ngayvaolam.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_ngayvaolam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_ngayvaolam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_ngayvaolam.Location = new System.Drawing.Point(631, 274);
             this.dateTimePicker_ngayvaolam.Name = "dateTimePicker_ngayvaolam";
             this.dateTimePicker_ngayvaolam.Size = new System.Drawing.Size(282, 34);
@@ -223,7 +224,7 @@
             this.btn_thoat.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btn_thoat.Location = new System.Drawing.Point(631, 492);
             this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(161, 65);
+            this.btn_thoat.Size = new System.Drawing.Size(190, 65);
             this.btn_thoat.TabIndex = 16;
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
@@ -345,8 +346,9 @@
             // 
             // dateTimePicker_ngaysinh
             // 
+            this.dateTimePicker_ngaysinh.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker_ngaysinh.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_ngaysinh.Location = new System.Drawing.Point(631, 149);
             this.dateTimePicker_ngaysinh.Name = "dateTimePicker_ngaysinh";
             this.dateTimePicker_ngaysinh.Size = new System.Drawing.Size(282, 34);
