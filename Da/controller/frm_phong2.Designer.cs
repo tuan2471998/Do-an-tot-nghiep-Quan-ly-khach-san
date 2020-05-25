@@ -39,7 +39,7 @@
             this.labelmaphong.AutoSize = true;
             this.labelmaphong.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelmaphong.ForeColor = System.Drawing.Color.Lime;
-            this.labelmaphong.Location = new System.Drawing.Point(14, 115);
+            this.labelmaphong.Location = new System.Drawing.Point(33, 127);
             this.labelmaphong.Name = "labelmaphong";
             this.labelmaphong.Size = new System.Drawing.Size(80, 36);
             this.labelmaphong.TabIndex = 4;
@@ -49,25 +49,25 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(20, 30);
+            this.pictureEdit1.Location = new System.Drawing.Point(28, 33);
             this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(74, 82);
+            this.pictureEdit1.Size = new System.Drawing.Size(85, 91);
             this.pictureEdit1.TabIndex = 3;
             this.pictureEdit1.Click += new System.EventHandler(this.labelmaphong_Click);
             // 
             // frm_phong2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
             this.Controls.Add(this.labelmaphong);
             this.Controls.Add(this.pictureEdit1);
             this.Name = "frm_phong2";
-            this.Size = new System.Drawing.Size(119, 151);
+            this.Size = new System.Drawing.Size(131, 171);
             this.Click += new System.EventHandler(this.labelmaphong_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);

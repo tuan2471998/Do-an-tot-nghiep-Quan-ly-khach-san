@@ -65,8 +65,8 @@ namespace Da.controller
                 bool kq = kiemtra(drPhong);
                 if (kq)
                 {
-                    //tạo control động cho các phòng
-                    frm_phong frm = new frm_phong(drPhong[0].ToString());
+                    //tạo control động cho các phòng , tạo user controll tương ứng cho mổi nút
+                    frm_phong2 frm = new frm_phong2(drPhong[0].ToString());
 
                     frm.Location = new Point(x, y);
                     panel_ph.Controls.Add(frm);
@@ -185,7 +185,7 @@ namespace Da.controller
             return true;
         }
         DataSet ds_phchitiet = new DataSet();
-        private DataTable dt1chitiet;
+        DataTable dt2chitiet;
 
         private void timer_phieuthue_Tick(object sender, EventArgs e)
         {
@@ -195,17 +195,17 @@ namespace Da.controller
                 {
                     SqlDataAdapter da_phCT = new SqlDataAdapter("select * from CT_THUEPHONG where MATP ='999999'", conn.cnn);
                     // Ánh xạ dữ liệu từ DB vào dataset
-                    da_phCT.Fill(ds_phchitiet, "CHITIET");
-                    dt1chitiet = ds_phchitiet.Tables["CHITIET"];
+                    da_phCT.Fill(ds_phchitiet, "CHITIETTHUE");
+                    dt2chitiet = ds_phchitiet.Tables["CHITIETTHUE"];
 
-                    DataRow dr = dt1chitiet.NewRow();
+                    DataRow dr = dt2chitiet.NewRow();
                     dr[0] = sinhtudongMaPhieuthue();
                     dr[1] = Properties.Settings.Default.value2.ToString().Trim().ToString();
 
                     Properties.Settings.Default.value2 = 0.ToString();
-                    dt1chitiet.Rows.Add(dr);
+                    dt2chitiet.Rows.Add(dr);
 
-                    dataGridView2.DataSource = dt1chitiet;
+                    dataGridView2.DataSource = dt2chitiet;
                 }
                 else
                 {
@@ -280,11 +280,14 @@ namespace Da.controller
       
         private void reload()
         {
+
             textBoxmanhanvien.Text = "";
             textBoxmathuephong.Text = "";
             dtp_ngaydat.Value = dtp_ngaytra.Value = DateTime.Now.Date;
-            textBoxsl.Text = "";
+            textBoxsl.Text = ""; 
+            panel_ph.Controls.Clear();
             textBoxtiencoc.Text = "";
+            dt2chitiet.Clear();
             try
             {
                 try

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace Da.controller
 {
-    public partial class frm_phong2 : UserControl
+    public partial class frm_phong2 : DevExpress.XtraEditors.XtraUserControl
     {
         public frm_phong2()
         {

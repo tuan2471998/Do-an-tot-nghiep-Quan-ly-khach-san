@@ -234,16 +234,16 @@ namespace Da.controller
                 txt_hoten.Focus();
                 txt_email.Clear();
                 cbb_bangcap.SelectedIndex = 0;
-<<<<<<< HEAD
+
                 dateTimePicker_ngaysinh.Text = "";
                 dateTimePicker_ngayvaolam.Text = "";
                 rdb_nam.Checked = rdb_nu.Checked = false;
                 
-=======
+
                 dateTimePicker_ngaysinh.Value = new DateTime(1990, 01, 01);
                 dateTimePicker_ngayvaolam.Value = DateTime.Today;
                 pictureBox1.Image = null;
->>>>>>> a4b0745731ec45aa5d3b2b3cfd21634fadf0f267
+
             }           
         }
 

@@ -405,13 +405,14 @@
             // panel_ph
             // 
             this.panel_ph.BackColor = System.Drawing.Color.White;
-            this.panel_ph.Location = new System.Drawing.Point(3, 71);
+            this.panel_ph.Location = new System.Drawing.Point(6, 71);
             this.panel_ph.Name = "panel_ph";
-            this.panel_ph.Size = new System.Drawing.Size(1105, 466);
+            this.panel_ph.Size = new System.Drawing.Size(1099, 463);
             this.panel_ph.TabIndex = 0;
             // 
             // timer_phieuthue
             // 
+            this.timer_phieuthue.Enabled = true;
             this.timer_phieuthue.Tick += new System.EventHandler(this.timer_phieuthue_Tick);
             // 
             // frm_phieuthue
