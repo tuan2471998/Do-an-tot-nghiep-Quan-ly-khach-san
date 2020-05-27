@@ -62,7 +62,7 @@ namespace Da.controller
                 if (chb_tang.Checked && !chb_loai.Checked)
             {
                 ds_ph = new DataSet();
-                da_ph = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat + "'", conn.cnn);
+                da_ph = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra.Value + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat.Value + "'", conn.cnn);
                 da_ph.Fill(ds_ph, "PHONG");
 
                 //load danh sach
@@ -71,7 +71,7 @@ namespace Da.controller
             else if (chb_loai.Checked && !chb_tang.Checked)
             {
                 ds_ph = new DataSet();
-                da_ph = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat + "'", conn.cnn);
+                da_ph = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra.Value + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat.Value + "'", conn.cnn);
                 da_ph.Fill(ds_ph, "PHONG");
 
                 //load danh sach
@@ -80,7 +80,7 @@ namespace Da.controller
             else if (chb_loai.Checked && chb_tang.Checked)
             {
                 ds_ph = new DataSet();
-                da_ph = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat + "'", conn.cnn);
+                da_ph = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra.Value + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat.Value + "'", conn.cnn);
                 da_ph.Fill(ds_ph, "PHONG");
 
                 //load danh sach
@@ -139,7 +139,7 @@ namespace Da.controller
         private bool kiemtra(DataRow drPhong)
         {
             DataSet ds_ph = new DataSet();
-            SqlDataAdapter da_phCT = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat + "'", conn.cnn);
+            SqlDataAdapter da_phCT = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra.Value + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat.Value + "'", conn.cnn);
             // Ánh xạ dữ liệu từ DB vào dataset, đặt tên Sach
             da_phCT.Fill(ds_ph, "PHONG");
             DataTable dt1 = ds_ph.Tables["PHONG"];
@@ -151,7 +151,7 @@ namespace Da.controller
                     return false;
                 }
             }
-            SqlDataAdapter da_phCTThue = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat + "'", conn.cnn);
+            SqlDataAdapter da_phCTThue = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra.Value + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat.Value + "'", conn.cnn);
             // Ánh xạ dữ liệu từ DB vào dataset, đặt tên Sach
             da_phCTThue.Fill(ds_ph, "PHONG2");
             DataTable dt2 = ds_ph.Tables["PHONG2"];
