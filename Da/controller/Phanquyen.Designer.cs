@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lb_tentk = new System.Windows.Forms.Label();
             this.btnxoaquyen = new System.Windows.Forms.Button();
             this.btncapquyen = new System.Windows.Forms.Button();
             this.dgv_tktheonhomquyen = new System.Windows.Forms.DataGridView();
@@ -58,7 +59,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lb_tentk = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tktheonhomquyen)).BeginInit();
@@ -164,6 +164,7 @@
             this.cbb_nhomquyen.Name = "cbb_nhomquyen";
             this.cbb_nhomquyen.Size = new System.Drawing.Size(251, 32);
             this.cbb_nhomquyen.TabIndex = 16;
+            
             // 
             // txttentk
             // 
@@ -222,6 +223,14 @@
             this.groupBox2.Size = new System.Drawing.Size(1712, 538);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
+            // 
+            // lb_tentk
+            // 
+            this.lb_tentk.AutoSize = true;
+            this.lb_tentk.Location = new System.Drawing.Point(814, 73);
+            this.lb_tentk.Name = "lb_tentk";
+            this.lb_tentk.Size = new System.Drawing.Size(0, 23);
+            this.lb_tentk.TabIndex = 22;
             // 
             // btnxoaquyen
             // 
@@ -398,15 +407,6 @@
             this.textBox1.TabIndex = 13;
             this.textBox1.Text = "Phân quyền tài khoản";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lb_tentk
-            // 
-            this.lb_tentk.AutoSize = true;
-            this.lb_tentk.Location = new System.Drawing.Point(814, 73);
-            this.lb_tentk.Name = "lb_tentk";
-            this.lb_tentk.Size = new System.Drawing.Size(60, 23);
-            this.lb_tentk.TabIndex = 22;
-            this.lb_tentk.Text = "label1";
             // 
             // Phanquyen
             // 

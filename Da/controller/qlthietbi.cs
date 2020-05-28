@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using DevExpress.XtraEditors;
+using DevExpress.DataProcessing.InMemoryDataProcessor.GraphGenerator;
+
 
 namespace Da.controller
 {
-    public partial class qlthietbi : UserControl
+    public partial class qlthietbi : DevExpress.XtraEditors.XtraUserControl
     {
+        connect conn = new connect();
+        
         public qlthietbi()
         {
             InitializeComponent();
+           
         }
+       
     }
+    
 }
