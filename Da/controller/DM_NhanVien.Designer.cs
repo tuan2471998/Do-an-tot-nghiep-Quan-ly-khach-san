@@ -52,7 +52,6 @@
             this.btn_Xoa = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Them = new DevExpress.XtraEditors.SimpleButton();
             this.cbb_bangcap = new System.Windows.Forms.ComboBox();
-            this.dateEditngaysinh = new DevExpress.XtraEditors.DateEdit();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.rdb_nu = new System.Windows.Forms.RadioButton();
@@ -60,7 +59,6 @@
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_lammoi = new DevExpress.XtraEditors.SimpleButton();
-            this.dateEditngayvaolam = new DevExpress.XtraEditors.DateEdit();
             this.txtsdt = new System.Windows.Forms.TextBox();
             this.txtcmnd = new System.Windows.Forms.TextBox();
             this.txthoten = new System.Windows.Forms.TextBox();
@@ -86,15 +84,13 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dtp_ngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.dtp_ngayvaolam = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datatk)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditngaysinh.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditngaysinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditngayvaolam.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditngayvaolam.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datadanhsachnhanvien)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -189,6 +185,8 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 2);
+            this.groupBox1.Controls.Add(this.dtp_ngayvaolam);
+            this.groupBox1.Controls.Add(this.dtp_ngaysinh);
             this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel3);
@@ -203,7 +201,6 @@
             this.groupBox1.Controls.Add(this.btn_Xoa);
             this.groupBox1.Controls.Add(this.btn_Them);
             this.groupBox1.Controls.Add(this.cbb_bangcap);
-            this.groupBox1.Controls.Add(this.dateEditngaysinh);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.rdb_nu);
@@ -211,7 +208,6 @@
             this.groupBox1.Controls.Add(this.radioGroup1);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btn_lammoi);
-            this.groupBox1.Controls.Add(this.dateEditngayvaolam);
             this.groupBox1.Controls.Add(this.txtsdt);
             this.groupBox1.Controls.Add(this.txtcmnd);
             this.groupBox1.Controls.Add(this.txthoten);
@@ -405,23 +401,6 @@
             this.cbb_bangcap.Size = new System.Drawing.Size(272, 34);
             this.cbb_bangcap.TabIndex = 48;
             // 
-            // dateEditngaysinh
-            // 
-            this.dateEditngaysinh.EditValue = new System.DateTime(2020, 4, 16, 0, 0, 0, 0);
-            this.dateEditngaysinh.Location = new System.Drawing.Point(888, 133);
-            this.dateEditngaysinh.Margin = new System.Windows.Forms.Padding(4);
-            this.dateEditngaysinh.Name = "dateEditngaysinh";
-            this.dateEditngaysinh.Properties.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.dateEditngaysinh.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEditngaysinh.Properties.Appearance.Options.UseBackColor = true;
-            this.dateEditngaysinh.Properties.Appearance.Options.UseFont = true;
-            this.dateEditngaysinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditngaysinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditngaysinh.Size = new System.Drawing.Size(272, 32);
-            this.dateEditngaysinh.TabIndex = 47;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -513,23 +492,6 @@
             this.btn_lammoi.TabIndex = 30;
             this.btn_lammoi.Text = "Làm mới danh sách";
             this.btn_lammoi.Click += new System.EventHandler(this.btn_lammoi_Click);
-            // 
-            // dateEditngayvaolam
-            // 
-            this.dateEditngayvaolam.EditValue = new System.DateTime(2020, 4, 16, 0, 0, 0, 0);
-            this.dateEditngayvaolam.Location = new System.Drawing.Point(888, 215);
-            this.dateEditngayvaolam.Margin = new System.Windows.Forms.Padding(4);
-            this.dateEditngayvaolam.Name = "dateEditngayvaolam";
-            this.dateEditngayvaolam.Properties.Appearance.BackColor = System.Drawing.Color.LightBlue;
-            this.dateEditngayvaolam.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEditngayvaolam.Properties.Appearance.Options.UseBackColor = true;
-            this.dateEditngayvaolam.Properties.Appearance.Options.UseFont = true;
-            this.dateEditngayvaolam.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditngayvaolam.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditngayvaolam.Size = new System.Drawing.Size(272, 32);
-            this.dateEditngayvaolam.TabIndex = 20;
             // 
             // txtsdt
             // 
@@ -801,6 +763,26 @@
             this.sửaToolStripMenuItem.Text = "Sửa";
             this.sửaToolStripMenuItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click);
             // 
+            // dtp_ngaysinh
+            // 
+            this.dtp_ngaysinh.CalendarFont = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_ngaysinh.CustomFormat = "dd/MM/yyyy";
+            this.dtp_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ngaysinh.Location = new System.Drawing.Point(883, 143);
+            this.dtp_ngaysinh.Name = "dtp_ngaysinh";
+            this.dtp_ngaysinh.Size = new System.Drawing.Size(273, 28);
+            this.dtp_ngaysinh.TabIndex = 239;
+            // 
+            // dtp_ngayvaolam
+            // 
+            this.dtp_ngayvaolam.CalendarFont = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_ngayvaolam.CustomFormat = "dd/MM/yyyy";
+            this.dtp_ngayvaolam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_ngayvaolam.Location = new System.Drawing.Point(883, 215);
+            this.dtp_ngayvaolam.Name = "dtp_ngayvaolam";
+            this.dtp_ngayvaolam.Size = new System.Drawing.Size(273, 28);
+            this.dtp_ngayvaolam.TabIndex = 240;
+            // 
             // DM_NhanVien
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -821,11 +803,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.datatk)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditngaysinh.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditngaysinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditngayvaolam.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditngayvaolam.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datadanhsachnhanvien)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -849,7 +827,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbb_bangcap;
-        private DevExpress.XtraEditors.DateEdit dateEditngaysinh;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RadioButton rdb_nu;
@@ -857,7 +834,6 @@
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraEditors.SimpleButton btn_lammoi;
-        private DevExpress.XtraEditors.DateEdit dateEditngayvaolam;
         private System.Windows.Forms.TextBox txtsdt;
         private System.Windows.Forms.TextBox txtcmnd;
         private System.Windows.Forms.TextBox txthoten;
@@ -891,5 +867,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker dtp_ngayvaolam;
+        private System.Windows.Forms.DateTimePicker dtp_ngaysinh;
     }
 }

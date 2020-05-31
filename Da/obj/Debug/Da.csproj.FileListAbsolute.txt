@@ -2023,3 +2023,5 @@ C:\Users\user\Desktop\do_an_tot_nghiep\Do-an-tot-nghiep-Quan-ly-khach-san\Da\obj
 C:\Users\user\Desktop\do_an_tot_nghiep\Do-an-tot-nghiep-Quan-ly-khach-san\Da\obj\Debug\Da.exe
 C:\Users\user\Desktop\do_an_tot_nghiep\Do-an-tot-nghiep-Quan-ly-khach-san\Da\obj\Debug\Da.pdb
 C:\Users\user\Desktop\do_an_tot_nghiep\Do-an-tot-nghiep-Quan-ly-khach-san\Da\obj\Debug\Da.controller.qlthietbi.resources
+D:\DoAnTotNghiep\Quan-ly-khach-san-Do-an-tot-nghiep\Da\obj\Debug\Da.controller.qlthietbi.resources
+D:\DoAnTotNghiep\Quan-ly-khach-san-Do-an-tot-nghiep\Da\obj\Debug\Da.controller.frm_quanlythietbi.resources

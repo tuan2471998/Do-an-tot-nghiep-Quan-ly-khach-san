@@ -71,10 +71,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(993, 48);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1078, 53);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 23);
+            this.label5.Size = new System.Drawing.Size(110, 26);
             this.label5.TabIndex = 4;
             this.label5.Text = "Số lượng:";
             // 
@@ -108,10 +108,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(511, 146);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(564, 144);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 23);
+            this.label6.Size = new System.Drawing.Size(145, 26);
             this.label6.TabIndex = 34;
             this.label6.Text = "Tiền đặt cọc:";
             // 
@@ -164,7 +164,7 @@
             // 
             this.dtp_ngaytra.CustomFormat = "dd/MM/yyyy";
             this.dtp_ngaytra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_ngaytra.Location = new System.Drawing.Point(640, 92);
+            this.dtp_ngaytra.Location = new System.Drawing.Point(706, 91);
             this.dtp_ngaytra.Name = "dtp_ngaytra";
             this.dtp_ngaytra.Size = new System.Drawing.Size(309, 34);
             this.dtp_ngaytra.TabIndex = 30;
@@ -173,7 +173,7 @@
             // 
             this.dtp_ngaydat.CustomFormat = "dd/MM/yyyy";
             this.dtp_ngaydat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_ngaydat.Location = new System.Drawing.Point(640, 40);
+            this.dtp_ngaydat.Location = new System.Drawing.Point(706, 39);
             this.dtp_ngaydat.Name = "dtp_ngaydat";
             this.dtp_ngaydat.Size = new System.Drawing.Size(309, 34);
             this.dtp_ngaydat.TabIndex = 29;
@@ -182,7 +182,7 @@
             // 
             this.txtMaKH.BackColor = System.Drawing.Color.LightBlue;
             this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Location = new System.Drawing.Point(167, 141);
+            this.txtMaKH.Location = new System.Drawing.Point(196, 140);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(309, 34);
             this.txtMaKH.TabIndex = 28;
@@ -194,7 +194,7 @@
             this.textBoxtiencoc.BackColor = System.Drawing.Color.LightBlue;
             this.textBoxtiencoc.Enabled = false;
             this.textBoxtiencoc.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxtiencoc.Location = new System.Drawing.Point(640, 141);
+            this.textBoxtiencoc.Location = new System.Drawing.Point(706, 140);
             this.textBoxtiencoc.Name = "textBoxtiencoc";
             this.textBoxtiencoc.Size = new System.Drawing.Size(309, 34);
             this.textBoxtiencoc.TabIndex = 27;
@@ -203,10 +203,10 @@
             // labelkhachhang
             // 
             this.labelkhachhang.AutoSize = true;
-            this.labelkhachhang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.labelkhachhang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelkhachhang.Location = new System.Drawing.Point(24, 143);
             this.labelkhachhang.Name = "labelkhachhang";
-            this.labelkhachhang.Size = new System.Drawing.Size(145, 23);
+            this.labelkhachhang.Size = new System.Drawing.Size(179, 26);
             this.labelkhachhang.TabIndex = 22;
             this.labelkhachhang.Text = "Mã khách hàng:";
             // 
@@ -215,7 +215,7 @@
             this.textBoxsoluong.BackColor = System.Drawing.Color.LightBlue;
             this.textBoxsoluong.Enabled = false;
             this.textBoxsoluong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsoluong.Location = new System.Drawing.Point(1083, 43);
+            this.textBoxsoluong.Location = new System.Drawing.Point(1194, 50);
             this.textBoxsoluong.Name = "textBoxsoluong";
             this.textBoxsoluong.Size = new System.Drawing.Size(309, 34);
             this.textBoxsoluong.TabIndex = 20;
@@ -225,7 +225,7 @@
             this.textBoxmanhanvien.BackColor = System.Drawing.Color.LightBlue;
             this.textBoxmanhanvien.Enabled = false;
             this.textBoxmanhanvien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxmanhanvien.Location = new System.Drawing.Point(167, 92);
+            this.textBoxmanhanvien.Location = new System.Drawing.Point(196, 91);
             this.textBoxmanhanvien.Name = "textBoxmanhanvien";
             this.textBoxmanhanvien.Size = new System.Drawing.Size(309, 34);
             this.textBoxmanhanvien.TabIndex = 18;
@@ -233,20 +233,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(511, 101);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(564, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 23);
+            this.label4.Size = new System.Drawing.Size(110, 26);
             this.label4.TabIndex = 13;
             this.label4.Text = "Ngày trả:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(511, 53);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(564, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 23);
+            this.label3.Size = new System.Drawing.Size(112, 26);
             this.label3.TabIndex = 12;
             this.label3.Text = "Ngày đặt:";
             // 
@@ -255,7 +255,7 @@
             this.textBoxmaphieudat.BackColor = System.Drawing.Color.LightBlue;
             this.textBoxmaphieudat.Enabled = false;
             this.textBoxmaphieudat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxmaphieudat.Location = new System.Drawing.Point(167, 44);
+            this.textBoxmaphieudat.Location = new System.Drawing.Point(196, 43);
             this.textBoxmaphieudat.Name = "textBoxmaphieudat";
             this.textBoxmaphieudat.Size = new System.Drawing.Size(309, 34);
             this.textBoxmaphieudat.TabIndex = 11;
@@ -263,20 +263,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 23);
+            this.label2.Size = new System.Drawing.Size(160, 26);
             this.label2.TabIndex = 9;
             this.label2.Text = "Mã nhân viên:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(24, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 23);
+            this.label1.Size = new System.Drawing.Size(157, 26);
             this.label1.TabIndex = 8;
             this.label1.Text = "Mã phiếu đặt:";
             // 
@@ -296,7 +296,6 @@
             this.dataGridViewchitiet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewchitiet.Size = new System.Drawing.Size(505, 522);
             this.dataGridViewchitiet.TabIndex = 9;
-          
             this.dataGridViewchitiet.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridViewchitiet_CellPainting);
             // 
             // MAPD

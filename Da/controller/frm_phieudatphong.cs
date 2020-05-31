@@ -59,7 +59,7 @@ namespace Da.controller
         private void Loadctroldong()
         {
  
-                if (chb_tang.Checked && !chb_loai.Checked)
+            if (chb_tang.Checked && !chb_loai.Checked)
             {
                 ds_ph = new DataSet();
                 da_ph = new SqlDataAdapter("select PHONG.MAPH from PHONG,CT_PHIEUDAT,PHIEUDAT WHERE PHONG.MAPH=CT_PHIEUDAT.MAPH AND CT_PHIEUDAT.MADP=PHIEUDAT.MADP AND NGAYNHAN_DUKIEN<='" + dtp_ngaytra.Value + "' AND NGAYTRA_DUKIEN>='" + dtp_ngaydat.Value + "'", conn.cnn);
@@ -165,9 +165,6 @@ namespace Da.controller
             }
             return true;
         }
-
-
-        
 
         DataSet ds_phchitiet = new DataSet();
         DataTable dt1chitiet;
