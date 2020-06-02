@@ -58,7 +58,11 @@ namespace Da.controller
 
         private void Loadctroldong()
         {
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> fafeb7eaefc6c83ea9f9e410e455643d4c8b37de
             if (chb_tang.Checked && !chb_loai.Checked)
             {
                 ds_ph = new DataSet();
@@ -167,9 +171,6 @@ namespace Da.controller
             }
             return true;
         }
-
-
-        
 
         DataSet ds_phchitiet = new DataSet();
         DataTable dt1chitiet;

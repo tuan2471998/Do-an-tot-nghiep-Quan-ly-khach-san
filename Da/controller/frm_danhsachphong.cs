@@ -25,8 +25,9 @@ namespace Da.controller
         SqlDataAdapter da;
         connect conn = new connect();
 
-        private void Load_control_all()
+        public void Load_control_all()
         {
+            panelphong.Controls.Clear();
             ds = new DataSet();
             da = new SqlDataAdapter("select * from PHONG", conn.cnn);
             da.Fill(ds, "PHONG");
@@ -98,7 +99,7 @@ namespace Da.controller
                 }
                 if (int.Parse(row["TINHTRANG"].ToString()) == 3)
                 {
-                    frm_phongdondep dondep = new frm_phongdondep(row["MAPH"].ToString());
+                    frm_phongdondep dondep = new frm_phongdondep(row["MAPH"].ToString(), this);
                     dondep.Location = new Point(x, y);
                     panelphong.Controls.Add(dondep);
                     x += 280;
@@ -116,7 +117,7 @@ namespace Da.controller
                 }
                 if (int.Parse(row["TINHTRANG"].ToString()) == 4)
                 {
-                    frm_phongsuachua suachua = new frm_phongsuachua(row["MAPH"].ToString());
+                    frm_phongsuachua suachua = new frm_phongsuachua(row["MAPH"].ToString(),this);
                     suachua.Location = new Point(x, y);
                     panelphong.Controls.Add(suachua);
                     x += 280;

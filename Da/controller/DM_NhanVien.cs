@@ -87,13 +87,13 @@ namespace Da.controller
                 rdb_nu.Checked = true;
             txtemail.Text = datadanhsachnhanvien.CurrentRow.Cells[7].Value.ToString();          
             txtdiachi.Text = datadanhsachnhanvien.CurrentRow.Cells[4].Value.ToString();
-            dateEditngaysinh.Text = datadanhsachnhanvien.CurrentRow.Cells[8].Value.ToString();
+            dtp_ngaysinh.Text = datadanhsachnhanvien.CurrentRow.Cells[8].Value.ToString();
             foreach (string item in cbb_bangcap.Items)
             {
                 if (string.Compare(datadanhsachnhanvien.CurrentRow.Cells[9].Value.ToString(), item) == 0)
                     cbb_bangcap.Text = item;
             }
-            dateEditngayvaolam.Text = datadanhsachnhanvien.CurrentRow.Cells[5].Value.ToString();
+            dtp_ngayvaolam.Text = datadanhsachnhanvien.CurrentRow.Cells[5].Value.ToString();
             
             clear_row();
 
@@ -119,8 +119,7 @@ namespace Da.controller
             txtemail.Clear();
             rdb_nam.Checked = rdb_nu.Checked = false;
             cbb_bangcap.SelectedIndex = 0;
-            dateEditngayvaolam.Text = "";
-            dateEditngaysinh.Text = "";
+            dtp_ngayvaolam.Value = dtp_ngaysinh.Value = DateTime.Now;
         }
         public void xoatk()
         {
@@ -210,8 +209,8 @@ namespace Da.controller
                     update_New["SDT"] = txtsdt.Text;
                     update_New["DIACHI"] = txtdiachi.Text;
                     update_New["BANGCAP"] = cbb_bangcap.Text;
-                    update_New["NGAYVAOLAM"] = dateEditngayvaolam.Text;
-                    update_New["NGAYSINH"] = dateEditngaysinh.Text;
+                    update_New["NGAYVAOLAM"] = dtp_ngayvaolam.Value;
+                    update_New["NGAYSINH"] = dtp_ngaysinh.Value;
                     if(rdb_nam.Checked)
                         update_New["GIOITINH"] = "Nam";
                     else
