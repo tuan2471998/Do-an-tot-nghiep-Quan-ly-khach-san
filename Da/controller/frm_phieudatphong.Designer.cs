@@ -177,6 +177,7 @@
             this.dtp_ngaydat.Name = "dtp_ngaydat";
             this.dtp_ngaydat.Size = new System.Drawing.Size(309, 34);
             this.dtp_ngaydat.TabIndex = 29;
+            this.dtp_ngaydat.ValueChanged += new System.EventHandler(this.dtp_ngaydat_ValueChanged);
             // 
             // txtMaKH
             // 
@@ -296,7 +297,6 @@
             this.dataGridViewchitiet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewchitiet.Size = new System.Drawing.Size(505, 522);
             this.dataGridViewchitiet.TabIndex = 9;
-          
             this.dataGridViewchitiet.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridViewchitiet_CellPainting);
             // 
             // MAPD

@@ -190,11 +190,23 @@
     <Compile Include="controller\frm_phongtrong.Designer.cs">
       <DependentUpon>frm_phongtrong.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\frm_thanhtoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controller\frm_thanhtoan.Designer.cs">
+      <DependentUpon>frm_thanhtoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="controller\frm_thongtinnhanvien.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="controller\frm_thongtinnhanvien.Designer.cs">
       <DependentUpon>frm_thongtinnhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\popup_phongsudung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controller\popup_phongsudung.Designer.cs">
+      <DependentUpon>popup_phongsudung.cs</DependentUpon>
     </Compile>
     <Compile Include="controller\qlthietbi.cs">
       <SubType>UserControl</SubType>
@@ -368,8 +380,14 @@
     <EmbeddedResource Include="controller\frm_phongtrong.resx">
       <DependentUpon>frm_phongtrong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controller\frm_thanhtoan.resx">
+      <DependentUpon>frm_thanhtoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controller\frm_thongtinnhanvien.resx">
       <DependentUpon>frm_thongtinnhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controller\popup_phongsudung.resx">
+      <DependentUpon>popup_phongsudung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controller\qlthietbi.resx">
       <DependentUpon>qlthietbi.cs</DependentUpon>

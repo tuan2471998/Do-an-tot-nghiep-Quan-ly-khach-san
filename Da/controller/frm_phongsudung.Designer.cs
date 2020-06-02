@@ -42,6 +42,7 @@
             this.lb_sophong.Size = new System.Drawing.Size(75, 32);
             this.lb_sophong.TabIndex = 5;
             this.lb_sophong.Text = "P101";
+            this.lb_sophong.Click += new System.EventHandler(this.lb_sophong_Click);
             // 
             // pictureEdit1
             // 
@@ -52,6 +53,8 @@
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(250, 205);
             this.pictureEdit1.TabIndex = 1;
+            this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click);
+            this.pictureEdit1.MouseLeave += new System.EventHandler(this.pictureEdit1_MouseLeave);
             // 
             // frm_phongsudung
             // 

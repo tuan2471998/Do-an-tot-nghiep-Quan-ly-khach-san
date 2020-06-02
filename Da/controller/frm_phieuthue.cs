@@ -456,7 +456,7 @@ namespace Da.controller
                 txtMaKH.Focus();
                 return 0;
             }
-            else if (dtp_ngaydat.Value >= dtp_ngaytra.Value)
+            else if (dtp_ngaydat.Value > dtp_ngaytra.Value)
             {
                 MessageBox.Show("Ngày trả phòng phải sau ngày đặt phòng");
                 return 0;

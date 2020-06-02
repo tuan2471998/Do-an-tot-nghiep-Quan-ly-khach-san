@@ -17,7 +17,7 @@ namespace Da.controller
             InitializeComponent();
         }
 
-        public frm_phongtrong(string sophong)
+        public frm_phongtrong(string sophong,Panel panel)
         {
             InitializeComponent();
             lb_sophong.Text = sophong;
